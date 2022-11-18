@@ -16,5 +16,13 @@ public class Main {
         Hospedaje objetoHospedaje =new Hospedaje();
         Alimentacion objetoAlimentacion =new Alimentacion();
 
+        System.out.println("--------------------");
+        System.out.println("Menu");
+        System.out.println("--------------------");
+        System.out.println("0. SALIR");
+        System.out.println("1. Registra empleado");
+        System.out.println("2. Registrar viaje");
+        System.out.println("3. Ver empleados");
+        System.out.println("4. Ver viajes de un empleado");
     }
 }

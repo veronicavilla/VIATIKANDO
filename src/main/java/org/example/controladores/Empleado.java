@@ -39,8 +39,12 @@ public class Empleado {
         return edad;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setEdad(int edad){
+    if(edad<18){
+        System.out.println("El empleado es menor de edad");
+    }else{
+        this.edad=edad;
+    }
     }
 
     public String getCargo() {
@@ -58,7 +62,15 @@ public class Empleado {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-}
+
+    public void mostrarEmpleado(){
+        System.out.println("Identificacion: "+this.id);
+        System.out.println("Nombre: "+this.nombre);
+        System.out.println("Edad: "+this.edad);
+        System.out.println("Cargo: "+this.cargo);
+        System.out.println("Salario: "+this.salario);
+    }
+    }
 
 
 

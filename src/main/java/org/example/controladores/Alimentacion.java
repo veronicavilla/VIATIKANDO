@@ -26,6 +26,10 @@ public class Alimentacion {
     }
 
     public void setGastos(double gastos) {
-        this.gastos = gastos;
+        if(gastos>0){
+            this.gastos = gastos;
+        }else{
+            System.out.println("No se aceptan valores negativos");
+        }
     }
 }
