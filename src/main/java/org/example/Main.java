@@ -24,5 +24,12 @@ public class Main {
         System.out.println("2. Registrar viaje");
         System.out.println("3. Ver empleados");
         System.out.println("4. Ver viajes de un empleado");
+
+        // Tiquetes
+
+        // Hospedaje
+
+        // Alimentación
+
     }
 }
