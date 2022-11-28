@@ -1,6 +1,6 @@
 package org.example.controladores;
 
-public class Transporte {
+public class Viaje {
 
     private String fechaIda;
     private String fechaRegreso;
@@ -10,10 +10,10 @@ public class Transporte {
     private String destino;
     private double valorTiquete;
 
-    public Transporte() {
+    public Viaje() {
     }
 
-    public Transporte(String fechaIda, String fechaRegreso, String internacional, String nacional, String origen, String destino, double valorTiquete) {
+    public Viaje(String fechaIda, String fechaRegreso, String internacional, String nacional, String origen, String destino, double valorTiquete) {
         this.fechaIda = fechaIda;
         this.fechaRegreso = fechaRegreso;
         this.internacional = internacional;
@@ -44,7 +44,7 @@ public class Transporte {
     }
 
     public void setInternacional(String internacional) {
-        internacional = internacional;
+        this.internacional = internacional;
     }
 
     public String getNacional() {
@@ -52,7 +52,7 @@ public class Transporte {
     }
 
     public void setNacional(String nacional) {
-        nacional = nacional;
+        this.nacional = nacional;
     }
 
     public String getOrigen() {
@@ -60,7 +60,7 @@ public class Transporte {
     }
 
     public void setOrigen(String origen) {
-        origen = origen;
+        this.origen = origen;
     }
 
     public String getDestino() {
@@ -68,7 +68,7 @@ public class Transporte {
     }
 
     public void setDestino(String destino) {
-        destino = destino;
+        this.destino = destino;
     }
 
     public double getValorTiquete() {
