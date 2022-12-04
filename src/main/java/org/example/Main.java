@@ -126,14 +126,30 @@ public class Main {
                    break;
 
                case 4:
-                   //se encontro el sigiente viaje asociado al empleado (+nombre) con id (+id)
+                   System.out.println();
+                   System.out.print("Ingrese el Id del empleado del cual desea ver sus viajes: ");
+                    int verViajesEmpledo = entradaPorTeclado.nextInt();
+
+                    for (Empleado empleado:empleados){
+                        for (Viaje viaje:viajes){
+                            if (empleado.getId()==verViajesEmpledo){
+                                System.out.println();
+                                System.out.print("Se encontro un viaje asociado al empleado " +empleado.getNombre());
+                                System.out.print(" con Id "+empleado.getId());
+                                System.out.println();
+                                System.out.println("Fecha de ida: "+viaje.getFechaIda());
+                                System.out.println("Fecha de regreso: "+viaje.getFechaRegreso());
+                                System.out.println("Origen: "+viaje.getOrigen());
+                                System.out.println("Destino: "+viaje.getDestino());
+                                System.out.print("Valor de los tiquetes: "+viaje.getValorTiquete());
+
+                            }else {
+                                System.out.println("El empleado no tiene viajes asosciados");
+                            }
+                        }
+                    }
                    break;
                         default: System.out.println("Selecciona una opcion valida");
-
-
-
-
-
            }
         }while (option !=5);
 
