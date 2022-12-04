@@ -3,7 +3,7 @@ package org.example.controladores;
 public class Empleado {
 
     private String nombre;
-    private String id;
+    private int id;
     private int edad;
     private String cargo;
     private double salario;
@@ -11,7 +11,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(String nombre, String id, int edad, String cargo, double salario) {
+    public Empleado(String nombre, int id, int edad, String cargo, double salario) {
         this.nombre = nombre;
         this.id = id;
         this.edad = edad;
@@ -27,11 +27,11 @@ public class Empleado {
         this.nombre = nombre;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -39,8 +39,8 @@ public class Empleado {
         return edad;
     }
 
-    public void setEdad(int edad){
-    if(edad<18){
+    public void setEdad(int edad) {
+        if(edad<18){
         System.out.println("El empleado es menor de edad");
     }else{
         this.edad=edad;
@@ -62,6 +62,7 @@ public class Empleado {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
 
     public void mostrarEmpleado(){
         System.out.println("Identificacion: "+this.id);
