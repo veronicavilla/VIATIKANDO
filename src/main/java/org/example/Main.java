@@ -108,9 +108,13 @@ public class Main {
                    System.out.println();
                    System.out.print("Ingrese el Id del empleado que desea ver: ");
                    int verEmpleado = entradaPorTeclado.nextInt();
+                   boolean encontrado = false;
+
+
 
                    for (Empleado empleado:empleados){
-                       if (empleado.getId()==verEmpleado){
+                       if(empleado.getId() == verEmpleado){
+                           encontrado = true;
                            System.out.println();
                            System.out.println("Se encontro un empleado con los siguientes datos: ");
                            System.out.println();
@@ -119,10 +123,18 @@ public class Main {
                            System.out.println("Edad: "+empleado.getEdad());
                            System.out.println("Cargo: "+empleado.getCargo());
                            System.out.println("Salario: "+empleado.getSalario());
+                           break;
                        }else {
-                           System.out.println("Empleado no encontrado");
+                           encontrado = false;
                        }
+
                    }
+
+                   if (!encontrado){
+                       System.out.println("Empleado no fue encontrado");
+                   }
+
+
                    break;
 
                case 4:
