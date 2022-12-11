@@ -96,6 +96,7 @@ public class Main {
 
                        System.out.print("Ingrese el valor del tiquete: ");
                        objetoViaje.setValorTiquete(entradaPorTeclado.nextDouble());
+                       System.out.println();
 
                        viajes.add(objetoViaje);
 
@@ -108,13 +109,11 @@ public class Main {
                    System.out.println();
                    System.out.print("Ingrese el Id del empleado que desea ver: ");
                    int verEmpleado = entradaPorTeclado.nextInt();
-                   boolean encontrado = false;
-
-
+                   boolean empleadoEncontrado = false;
 
                    for (Empleado empleado:empleados){
                        if(empleado.getId() == verEmpleado){
-                           encontrado = true;
+                           empleadoEncontrado = true;
                            System.out.println();
                            System.out.println("Se encontro un empleado con los siguientes datos: ");
                            System.out.println();
@@ -125,13 +124,13 @@ public class Main {
                            System.out.println("Salario: "+empleado.getSalario());
                            break;
                        }else {
-                           encontrado = false;
+                           empleadoEncontrado = false;
                        }
 
                    }
 
-                   if (!encontrado){
-                       System.out.println("Empleado no fue encontrado");
+                   if (!empleadoEncontrado){
+                       System.out.println("Empleado no encontrado");
                    }
 
 
@@ -141,10 +140,12 @@ public class Main {
                    System.out.println();
                    System.out.print("Ingrese el Id del empleado del cual desea ver sus viajes: ");
                     int verViajesEmpledo = entradaPorTeclado.nextInt();
+                    boolean viajeEncontrado = false;
 
                     for (Empleado empleado:empleados){
                         for (Viaje viaje:viajes){
                             if (empleado.getId()==verViajesEmpledo){
+                                viajeEncontrado = true;
                                 System.out.println();
                                 System.out.print("Se encontro un viaje asociado al empleado " +empleado.getNombre());
                                 System.out.print(" con Id "+empleado.getId());
@@ -154,11 +155,14 @@ public class Main {
                                 System.out.println("Origen: "+viaje.getOrigen());
                                 System.out.println("Destino: "+viaje.getDestino());
                                 System.out.print("Valor de los tiquetes: "+viaje.getValorTiquete());
-
+                                break;
                             }else {
-                                System.out.println("El empleado no tiene viajes asosciados");
+                                viajeEncontrado = false;
                             }
                         }
+                    }
+                    if (!viajeEncontrado){
+                        System.out.println("El empleado no tiene viajes asociados");
                     }
                    break;
                         default: System.out.println("Selecciona una opcion valida");
