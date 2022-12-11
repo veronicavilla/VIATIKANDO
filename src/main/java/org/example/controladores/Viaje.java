@@ -6,6 +6,8 @@ public class Viaje {
     private String fechaRegreso;
     private String internacional;
     private String nacional;
+
+    private String id;
     private String origen;
     private String destino;
     private double valorTiquete;
@@ -13,14 +15,23 @@ public class Viaje {
     public Viaje() {
     }
 
-    public Viaje(String fechaIda, String fechaRegreso, String internacional, String nacional, String origen, String destino, double valorTiquete) {
+    public Viaje(String fechaIda, String fechaRegreso, String internacional, String nacional, String id, String origen, String destino, double valorTiquete) {
         this.fechaIda = fechaIda;
         this.fechaRegreso = fechaRegreso;
         this.internacional = internacional;
         this.nacional = nacional;
+        this.id = id;
         this.origen = origen;
         this.destino = destino;
         this.valorTiquete = valorTiquete;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFechaIda() {

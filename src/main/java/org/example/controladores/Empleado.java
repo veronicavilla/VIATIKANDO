@@ -1,6 +1,10 @@
 package org.example.controladores;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Empleado {
+    Scanner entradaPorteclado = new Scanner(System.in);
 
     private String nombre;
     private int id;
@@ -11,12 +15,21 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(String nombre, int id, int edad, String cargo, double salario) {
+    public Empleado(Scanner entradaPorteclado, String nombre, int id, int edad, String cargo, double salario) {
+        this.entradaPorteclado = entradaPorteclado;
         this.nombre = nombre;
         this.id = id;
         this.edad = edad;
         this.cargo = cargo;
         this.salario = salario;
+    }
+
+    public Scanner getEntradaPorteclado() {
+        return entradaPorteclado;
+    }
+
+    public void setEntradaPorteclado(Scanner entradaPorteclado) {
+        this.entradaPorteclado = entradaPorteclado;
     }
 
     public String getNombre() {
@@ -40,11 +53,11 @@ public class Empleado {
     }
 
     public void setEdad(int edad) {
-        if(edad<18){
-        System.out.println("El empleado es menor de edad");
-    }else{
-        this.edad=edad;
-    }
+        while (edad <= 17) {
+            System.out.print("El empleado debe ser mayor de edad, ingrese la edad correcta: ");
+            edad = entradaPorteclado.nextInt();
+        }
+        this.edad = edad;
     }
 
     public String getCargo() {
@@ -63,7 +76,6 @@ public class Empleado {
         this.salario = salario;
     }
 
-
     public void mostrarEmpleado(){
         System.out.println("Identificacion: "+this.id);
         System.out.println("Nombre: "+this.nombre);
@@ -71,6 +83,21 @@ public class Empleado {
         System.out.println("Cargo: "+this.cargo);
         System.out.println("Salario: "+this.salario);
     }
+//    public Empleado mostrarEmpleado(ArrayList<Empleado> empleados, String id){
+//        Empleado empleadoMostrado = null;
+//        for (Empleado empleado:empleados){
+//            if (empleado.getId().equals(id)){
+//                empleadoMostrado = empleado;
+//                break;
+//            }
+//        }
+//        return empleadoMostrado;
+//    }
+
+
+
+
+
     }
 
 
